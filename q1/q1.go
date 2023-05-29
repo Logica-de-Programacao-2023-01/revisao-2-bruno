@@ -10,7 +10,7 @@ type Student struct {
 	Subjects map[string]float64
 }
 
-func mergeStudentData(studentData1, studentData2 map[string]Student) map[string]Student {
+func MergeStudentData(studentData1, studentData2 map[string]Student) map[string]Student {
 	result := make(map[string]Student)
 
 	// Primeiro, copiamos os dados do studentData1 para o resultado
@@ -36,8 +36,9 @@ func mergeStudentData(studentData1, studentData2 map[string]Student) map[string]
 }
 
 func main() {
+	// Exemplo de uso
 	studentData1 := map[string]Student{
-		"John": Student{
+		"John": {
 			Name: "John",
 			Age:  20,
 			Subjects: map[string]float64{
@@ -45,7 +46,7 @@ func main() {
 				"Science": 7.8,
 			},
 		},
-		"Alice": Student{
+		"Alice": {
 			Name: "Alice",
 			Age:  22,
 			Subjects: map[string]float64{
@@ -55,24 +56,24 @@ func main() {
 	}
 
 	studentData2 := map[string]Student{
-			"John": Student{
-				Name: "John",
-				Age:  20,
-				Subjects: map[string]float64{
-					"Science": 8.0,
-					"English": 7.5,
-				},
+		"John": {
+			Name: "John",
+			Age:  20,
+			Subjects: map[string]float64{
+				"Science": 8.0,
+				"English": 7.5,
 			},
-			"Bob": Student{
-				Name: "Bob",
-				Age:  21,
-				Subjects: map[string]float64{
-					"Math":    6.7,
-					"Physics": 8.9,
-				},
+		},
+		"Bob": {
+			Name: "Bob",
+			Age:  21,
+			Subjects: map[string]float64{
+				"Math":    6.7,
+				"Physics": 8.9,
 			},
+		},
 	}
 
-	result := mergeStudentData(studentData1, studentData2)
+	result := MergeStudentData(studentData1, studentData2)
 	fmt.Println(result)
 }
