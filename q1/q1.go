@@ -1,7 +1,7 @@
 package q1
 
 import (
-	"fmt"
+	"fmt" 
 )
 
 type Student struct {
