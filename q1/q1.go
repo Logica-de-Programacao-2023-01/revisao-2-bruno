@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Student struct {
 	Name     string
@@ -26,6 +29,20 @@ func mergeStudentData(studentData1, studentData2 map[string]Student) map[string]
 	}
 
 	return mergedData
+}
+
+func printStudentData(data map[string]Student) {
+	for _, student := range data {
+		subjects := make([]string, 0, len(student.Subjects))
+		for subject := range student.Subjects {
+			subjects = append(subjects, subject)
+		}
+
+		fmt.Printf("Name: %s\n", student.Name)
+		fmt.Printf("Age: %d\n", student.Age)
+		fmt.Printf("Subjects: %s\n", strings.Join(subjects, ", "))
+		fmt.Println("-----------------------")
+	}
 }
 
 func main() {
@@ -67,5 +84,5 @@ func main() {
 	}
 
 	result := mergeStudentData(studentData1, studentData2)
-	fmt.Println(result)
+	printStudentData(result)
 }
