@@ -19,7 +19,7 @@ function mergeStudentData(studentData1, studentData2) {
       };
     }
   }
-  for (let name in studentData2) {
+  for (let name in studentData2) { 
     if (!(name in studentData1)) 
       mergedData[name] = {
         name: name,
