@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Student struct {
 	Name     string
 	Age      int
@@ -65,5 +67,5 @@ func main() {
 	}
 
 	result := mergeStudentData(studentData1, studentData2)
-	println(result)
+	fmt.Println(result)
 }
